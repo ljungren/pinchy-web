@@ -21,48 +21,48 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <div class="product-options">
+    <a  id="myWish" href="javascript:;"  class="btn btn-mini" >Add to Wishlist </a>
+    <a  href="" class="btn btn-mini"> Purchase </a>
+</div>
+<div class="alert alert-success" id="success-alert">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong>
+    Product have added to your wishlist...
+</div> 
     
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">pinchy web</h3>
+        <h3 class="text-muted" style="text-align: center;">pinchy web</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+        <h1>Pinchy</h1>
+        <p class="lead">This is the webb version</p>
+        <button id="playerbutton" style="margin-bottom: 25px;" class="btn btn-lg btn-success" onclick="setTimeout(alertFunc, 3000)">Play fullscreen</button><br>
+        <div id="player"></div>
       </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
-        </div>
-      </div>
+
+<h2>Bottom Modals</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="btn btn-primary btn-block" style="background-color: black;">Open Modal</button>
+
 
       <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <p onclick="alertFunc()">♥ from the Yeoman team</p>
       </div>
     </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -98,5 +98,6 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    
   </body>
 </html>
