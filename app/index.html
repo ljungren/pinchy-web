@@ -21,62 +21,44 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <div class="product-options">
+    <a  id="myWish" href="javascript:;"  class="btn btn-mini" >Add to Wishlist </a>
+    <a  href="" class="btn btn-mini"> Purchase </a>
+</div>
+<div class="alert alert-success" id="success-alert">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong>
+    Product have added to your wishlist...
+</div> 
     
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">pinchy web</h3>
+        <h3 class="text-muted" style="text-align: center;">pinchy web</h3>
       </div>
 
       <div class="jumbotron">
-        <h1>'This is fancy</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+        <h1>Pinchy</h1>
+        <p class="lead">This is the webb version</p>
+        <button id="playerbutton" style="margin-bottom: 25px;" class="btn btn-lg btn-success" onclick="setTimeout(alertFunc, 3000)">Play fullscreen</button><br>
+        <div id="player"></div>
       </div>
 
-    
-
-      
-
-<button id="playerbutton" class="btn btn-primary btn-block" onclick="setTimeout(alertFunc, 3000)">Play fullscreen</button><br>
-<div id="player"></div>
 
 <h2>Bottom Modals</h2>
 
 <!-- Trigger/Open The Modal -->
 <button id="myBtn" class="btn btn-primary btn-block" style="background-color: black;">Open Modal</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times</span>
-      <h2>Modal Header</h2>
-    </div>
-    <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
-</div>
 
       <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <p onclick="alertFunc()">♥ from the Yeoman team</p>
       </div>
     </div>
 
@@ -116,5 +98,6 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    
   </body>
 </html>
