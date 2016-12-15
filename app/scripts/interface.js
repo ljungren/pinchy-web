@@ -49,6 +49,7 @@ module.exports = {
             status: (statusEvent) => {
               if (statusEvent.category === "PNConnectedCategory") {
                 //sends publish when listener is connected
+                console.log("connected callback");
                 connectedCallback();
               }
             },

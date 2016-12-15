@@ -1,9 +1,10 @@
 require('babel-register');
 const pinchyWeb = require('./pinchy-web');
-pinchyWeb();
+pinchyWeb.init;
 
 module.exports = {
   initVideo: (videoId, startTime, sendReady) => {
+    console.log('init video');
     $('#ytplayer').hide();
     $("#success-alert").hide();
     $("#myWish").click(function showAlert() {
@@ -21,16 +22,18 @@ module.exports = {
       start: startTime,
       onReady: function(){
         //callback for sending response
+        console.log('sendReady');
         sendReady();
       }
 
     });     
   },
-  playVideo: () => {
-    //$('#ytplayer').show();
-    //$('#ytplayer').enterFullscreen();
-    //$('#ytplayer').play();
-    //$('#ytplayer').seekTo(24);
+  playVideo: (startTime) => {
+    console.log('playing video');
+    $('#ytplayer').show();
+    $('#ytplayer').enterFullscreen();
+    $('#ytplayer').play();
+    $('#ytplayer').seekTo(startTime);
   }
 }
 
