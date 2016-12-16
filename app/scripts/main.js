@@ -5,14 +5,6 @@ pinchyWeb.init;
 module.exports = {
   initVideo: (videoId, startTime, sendReady) => {
     console.log('init video');
-    $('#ytplayer').hide();
-    $("#success-alert").hide();
-    $("#myWish").click(function showAlert() {
-      $("#success-alert").alert();
-      $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
-        $("#success-alert").slideUp(500);
-      });   
-    });
 
     $('#ytplayer').YTplayer({
       // Basic setting
@@ -21,20 +13,41 @@ module.exports = {
       videoId: videoId, 
       start: startTime,
       onReady: function(){
-        //callback for sending response
-        console.log('sendReady');
+        $('#ytplayer').play();
+        $('#ytplayer').pause();
         sendReady();
       }
 
     });     
   },
+  showQuestion: () => {
+    //show loading screen until play
+    $("#myWish").click(() => {
+      $("#success-alert").alert();
+      $("#success-alert").fadeTo(2000, 500).slideUp(500, () => {
+        $("#success-alert").slideUp(500);
+      });   
+    });
+    //hide question after 10 sec
+    setTimeout(() => {
+      $('#ytplayer').hide();
+      $("#success-alert").hide();
+    }), 10000);
+  },
+  hideQuestion: () => {
+    $('#ytplayer').hide();
+    $("#success-alert").hide();
+  },
   playVideo: (startTime) => {
-    console.log('playing video');
+    console.log('timing video');
+    console.log('increased timerTime 100 ms');
     $('#ytplayer').show();
     $('#ytplayer').enterFullscreen();
     $('#ytplayer').play();
     $('#ytplayer').seekTo(startTime);
   }
 }
+
+
 
 

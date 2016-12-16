@@ -33,7 +33,6 @@ let formatResponse = (channel, message) => {
         case 'init':
           //Get video info from init
           videoId = message.info.videoId;
-          console.log(videoId);
           startTime = parseInt(message.info.time);
           //initialize video and send ready when can play
           main.initVideo(videoId, startTime, () => {
@@ -46,15 +45,21 @@ let formatResponse = (channel, message) => {
 
         case 'question':
           //show question on screen
-
+          main.showQuestion();
           break;
 
         case 'choice':
-          //hide question
-          //show loading screen until play
+          let decision = message.info.choice;
+          if(decision=='yes'){
+            //start loading animation until video starts
+          }else{
+            //hide question
+            main.hideQuestion();
+          }
           break;
         case 'start':
           startTime = parseInt(message.info.time);
+          console.log('startTime: ' + startTime);
           main.playVideo(startTime);
 
         default:
