@@ -115,8 +115,7 @@ body {
   }
 }
 
-//!!!!!!Martins nya coola code aka kod!!!!!!*/
-/* If you want the full-screen API to work across platforms, add this to your stylesheet: */
+//!!!!!!Martins nya coola kod
 :-webkit-full-screen{
     top: 0;
     width: 100%;
@@ -234,16 +233,20 @@ body {
      padding-left: 20px;
     background-color: rgba(0, 0, 0, 0.3);
     border: none;
-    width: 207px;
+    width: 210px;
     height:75px;
+
+    .icons{
+        display:inline-block;
+        width: 64px; 
+        height: 64px; 
+        color:#eee;
+
+        img{
+          padding-bottom: 35px;
+          height:100px;
+          display:inline-block;
+        }
+    }
 }
-.icons{
-    display:inline-block;
-    width: 64px; 
-    height: 64px; 
-}
-.icons>img{
-  padding-bottom: 35px;
-  height:100px;
-  display:inline-block;
-}
+
