@@ -31,8 +31,7 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe($.browserify({
-      insertGlobals : true,
-      debug : !gulp.env.production
+      debug : true
     }))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe(reload({stream: true}));

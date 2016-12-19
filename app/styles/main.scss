@@ -32,6 +32,11 @@ body {
   margin:5%;
   display:inline-block;
 }
+.question{
+  background-color:rgba(232, 232, 232, 0.5);
+  border-radius:4px;
+  color: #1D2B33;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -110,7 +115,7 @@ body {
   }
 }
 
-/*!!!!!!Martins nya coola code aka kod!!!!!!*/
+//!!!!!!Martins nya coola code aka kod!!!!!!*/
 /* If you want the full-screen API to work across platforms, add this to your stylesheet: */
 :-webkit-full-screen{
     top: 0;
@@ -131,7 +136,7 @@ body {
     width: 100% !important;
     height: 100% !important;
 }
-#logo{
+.container>div>img{
     width:304px;height:228px;
     padding-left: 20px;
 }
@@ -188,4 +193,57 @@ body {
     align-items: center;
   z-index: 10000; }
 
+.blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 2.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
 
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 2.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+
+  animation-name: blinker;
+  animation-duration: 2.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.customAlert{
+    margin-left:10px;
+    padding-top: 6px;
+     padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    width: 207px;
+    height:75px;
+}
+.icons{
+    display:inline-block;
+    width: 64px; 
+    height: 64px; 
+}
+.icons>img{
+  padding-bottom: 35px;
+  height:100px;
+  display:inline-block;
+}

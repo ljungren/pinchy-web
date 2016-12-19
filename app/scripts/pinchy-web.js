@@ -1,7 +1,9 @@
 const apiInterface = require('./interface')
 const main = require('./main')
 
-let init = () => {
+let initialize = () => {
+
+  main.ready;
   /*create listener on channel with
   callback on established connection and on received message*/
   apiInterface.addChannelListener('pinchy_channel', () => {
@@ -21,7 +23,7 @@ let init = () => {
 }
 
 module.exports = {
-  init: init()
+  init: initialize()
 }
 
 let formatResponse = (channel, message) => {
@@ -80,11 +82,6 @@ let calcDiff = (timestamp) => {
   return Date.now() - parseInt(timestamp);
 }
 
-let addSensorListener = () => {
-  //when couch sensor is triggered, send question, then listen for finger input
-  console.log('listen for sensor input');
-  //when finger input, send choice and info
-}
 let responseFactory = (tag, sender, videoId, time) => {
     return JSON.stringify({
       "tag": tag,

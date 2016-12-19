@@ -1,11 +1,15 @@
 require('babel-register');
 const pinchyWeb = require('./pinchy-web');
-pinchyWeb.init;
+
+$( document ).ready(function() {
+  $("#success-alert").removeClass('in');
+  $('#ytplayer').hide();
+  pinchyWeb.init;
+});
 
 module.exports = {
   initVideo: (videoId, startTime, sendReady) => {
     console.log('init video');
-
     $('#ytplayer').YTplayer({
       // Basic setting
       width: 1000,                // video width
@@ -21,22 +25,26 @@ module.exports = {
     });     
   },
   showQuestion: () => {
-    //show loading screen until play
-    $("#myWish").click(() => {
-      $("#success-alert").alert();
-      $("#success-alert").fadeTo(2000, 500).slideUp(500, () => {
-        $("#success-alert").slideUp(500);
-      });   
-    });
-    //hide question after 10 sec
+    //show question on screen
+    console.log('show question on screen');
+    //$(".alert").alert();
+    $("#success-alert").addClass('in');
+
+    // setTimeout( () => {
+    //   $("#sucess-alert").fadeTo(2000, 500).slideUp(500, () => {
+    //     $("#success-alert").slideUp(500);
+    //   });   
+    // }, 10000);
+
     setTimeout(() => {
-      $('#ytplayer').hide();
       $("#success-alert").hide();
-    }), 10000);
+    }, 10000);
   },
   hideQuestion: () => {
+    //hide question
+    console.log('hide question');
+    $("#sucess-alert").removeClass('in');
     $('#ytplayer').hide();
-    $("#success-alert").hide();
   },
   playVideo: (startTime) => {
     console.log('timing video');
