@@ -54,6 +54,7 @@ let formatResponse = (channel, message) => {
           let decision = message.info.choice;
           if(decision=='yes'){
             //start loading animation until video starts
+            main.pulse();
           }else{
             //hide question
             main.hideQuestion();
@@ -68,10 +69,6 @@ let formatResponse = (channel, message) => {
           console.log('ignoring...');
       }
 
-      
-      //...
-      //do publish
-      //add new listener
     }
     else{
       //...no channel

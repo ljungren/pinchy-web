@@ -30,21 +30,18 @@ module.exports = {
     //$(".alert").alert();
     $("#success-alert").addClass('in');
 
-    // setTimeout( () => {
-    //   $("#sucess-alert").fadeTo(2000, 500).slideUp(500, () => {
-    //     $("#success-alert").slideUp(500);
-    //   });   
-    // }, 10000);
-
     setTimeout(() => {
-      $("#success-alert").hide();
+      $("#success-alert").removeClass('in');
     }, 10000);
   },
   hideQuestion: () => {
     //hide question
     console.log('hide question');
-    $("#sucess-alert").removeClass('in');
+    $("#success-alert").removeClass('in');
     $('#ytplayer').hide();
+  },
+  pulse: () => {
+    $("#logo").addClass('pulsate-logo');
   },
   playVideo: (startTime) => {
     console.log('timing video');
